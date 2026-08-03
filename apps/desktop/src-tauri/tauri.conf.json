@@ -4,9 +4,9 @@
   "version": "2.0.0",
   "identifier": "com.aetheros.desktop",
   "build": {
-    "beforeDevCommand": "pnpm --filter @aetheros/desktop-frontend dev",
+    "beforeDevCommand": "",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "pnpm --filter @aetheros/desktop-frontend build",
+    "beforeBuildCommand": "",
     "frontendDist": "../frontend/dist"
   },
   "app": {

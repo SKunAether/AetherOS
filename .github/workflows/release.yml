@@ -1,6 +1,4 @@
 # 正式发布工作流（AetherOS 2.0）
-# 触发：push tag v*
-# 内容：构建前端与 Tauri 应用、生成 NSIS 安装包与更新清单、发布 GitHub Release。
 name: Release
 
 on:
@@ -30,15 +28,19 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        # 从根 package.json 的 packageManager 字段读取版本，无需显式指定
+        # 从根 package.json 的 packageManager 读取版本
 
       - name: Install frontend dependencies
         working-directory: apps/desktop/frontend
         run: pnpm install --frozen-lockfile
 
+      - name: Build frontend
+        working-directory: apps/desktop/frontend
+        run: pnpm build
+
       - name: Build installer (tauri)
         working-directory: apps/desktop/frontend
-        run: pnpm exec tauri build -- --path ../src-tauri
+        run: pnpm exec tauri build -- --path ..
 
       - name: Generate update manifest
         shell: pwsh
