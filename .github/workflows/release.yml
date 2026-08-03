@@ -28,7 +28,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        # 从根 package.json 的 packageManager 读取版本
 
       - name: Install frontend dependencies
         working-directory: apps/desktop/frontend
@@ -39,8 +38,8 @@ jobs:
         run: pnpm build
 
       - name: Build installer (tauri)
-        working-directory: apps/desktop/frontend
-        run: pnpm exec tauri build -- --path ..
+        working-directory: apps/desktop
+        run: pnpm --filter @aetheros/desktop-frontend exec tauri build
 
       - name: Generate update manifest
         shell: pwsh

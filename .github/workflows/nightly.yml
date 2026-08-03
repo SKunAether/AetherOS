@@ -36,8 +36,8 @@ jobs:
         run: pnpm build
 
       - name: Build dev installer
-        working-directory: apps/desktop/frontend
-        run: pnpm exec tauri build -- --path ..
+        working-directory: apps/desktop
+        run: pnpm --filter @aetheros/desktop-frontend exec tauri build
 
       - name: Upload nightly artifact
         uses: actions/upload-artifact@v4
