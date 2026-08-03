@@ -30,16 +30,15 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 11
+        # 不指定 version，让 action 从 package.json 的 packageManager 字段读取
 
       - name: Install frontend dependencies
         working-directory: apps/desktop/frontend
         run: pnpm install --frozen-lockfile
 
       - name: Build installer (tauri)
-        working-directory: apps/desktop/src-tauri
-        run: pnpm --filter @aetheros/desktop-frontend exec tauri build
+        working-directory: apps/desktop/frontend
+        run: pnpm exec tauri build --path ../src-tauri
 
       - name: Generate update manifest
         shell: pwsh

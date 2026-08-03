@@ -57,8 +57,7 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 11
+        # 不指定 version，让 action 从 package.json 的 packageManager 字段读取
 
       - name: Cache pnpm
         uses: actions/cache@v4
