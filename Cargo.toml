@@ -65,7 +65,7 @@ aether-plugin-sdk = { path = "crates/aether-plugin-sdk" }
 
 # ---- Windows (windows-rs) ----
 [workspace.dependencies.windows]
-version = "0.59"
+version = "0.61"
 features = [
     "Win32_Foundation",
     "Win32_Storage_FileSystem",
