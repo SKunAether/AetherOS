@@ -38,8 +38,8 @@ jobs:
         run: pnpm build
 
       - name: Build installer (tauri)
-        working-directory: apps/desktop
-        run: pnpm --filter @aetheros/desktop-frontend exec tauri build
+        working-directory: apps/desktop/frontend
+        run: pnpm exec tauri build -- --path ${{ github.workspace }}/apps/desktop
 
       - name: Generate update manifest
         shell: pwsh
