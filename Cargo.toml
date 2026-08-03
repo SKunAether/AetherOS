@@ -1,0 +1,85 @@
+# AetherOS 2.0 — Cargo Workspace 根配置
+# 统一管理所有 Rust crate（aether-core 等核心库 + Tauri 桌面后端）与公共依赖版本，
+# 通过 workspace.dependencies 集中锁定依赖版本，保证全仓库构建一致性。
+
+[workspace]
+resolver = "2"
+members = [
+    "crates/aether-core",
+    "crates/aether-runtime",
+    "crates/aether-system",
+    "crates/aether-cleaner",
+    "crates/aether-optimizer",
+    "crates/aether-monitor",
+    "crates/aether-recovery",
+    "crates/aether-plugin-sdk",
+    "apps/desktop/src-tauri",
+]
+
+# 工作区共享依赖：所有 crate 通过 `name.workspace = true` 引用，避免版本漂移
+[workspace.dependencies]
+# ---- async / runtime ----
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "fs", "time"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+async-trait = "0.1"
+futures = "0.3"
+rayon = "1"
+
+# ---- serialization ----
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# ---- errors / logging ----
+thiserror = "2"
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# ---- concurrent containers ----
+dashmap = "6"
+
+# ---- system monitoring ----
+sysinfo = "0.30"
+regex = "1"
+
+# ---- AI analysis ----
+ureq = { version = "2", default-features = false, features = ["tls", "json"] }
+base64 = "0.22"
+
+# ---- Tauri 2 ----
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-build = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+
+# ---- 首方 crates（Cargo Workspace 成员）----
+aether-core = { path = "crates/aether-core" }
+aether-runtime = { path = "crates/aether-runtime" }
+aether-system = { path = "crates/aether-system" }
+aether-cleaner = { path = "crates/aether-cleaner" }
+aether-optimizer = { path = "crates/aether-optimizer" }
+aether-monitor = { path = "crates/aether-monitor" }
+aether-recovery = { path = "crates/aether-recovery" }
+aether-plugin-sdk = { path = "crates/aether-plugin-sdk" }
+
+# ---- Windows (windows-rs) ----
+[workspace.dependencies.windows]
+version = "0.59"
+features = [
+    "Win32_Foundation",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Registry",
+    "Win32_System_SystemInformation",
+    "Win32_System_Threading",
+    "Win32_System_WindowsProgramming",
+    "Win32_Security",
+    "Win32_Security_Cryptography",
+    "Win32_UI_Shell",
+]
+
+# 便于离线/加速依赖构建的镜像配置（保留注释，按需启用）
+# [source.crates-io]
+# replace-with = "rsproxy-sparse"
+# [source.rsproxy-sparse]
+# registry = "sparse+https://rsproxy.cn/index/"

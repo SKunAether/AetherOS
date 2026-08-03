@@ -1,0 +1,22 @@
+# EditorConfig：统一不同编辑器/IDE 的代码格式，保证跨开发者一致
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{cs,js,ts,tsx,json,md,yml,yaml,toml}]
+indent_style = space
+indent_size = 2
+
+[*.rs]
+indent_style = space
+indent_size = 4
+
+[*.cs]
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false

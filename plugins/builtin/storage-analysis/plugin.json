@@ -1,0 +1,12 @@
+{
+  "id": "aetheros.storage-analysis",
+  "name": "空间分析",
+  "version": "2.0.0",
+  "author": "AetherOS Team",
+  "description": "内置空间分析：大文件识别与文件类型分布统计",
+  "category": "Built-in",
+  "minimumAetherOSVersion": "2.0.0",
+  "capabilities": ["scan.large-files", "scan.file-types"],
+  "isEnabled": true,
+  "isBuiltIn": true
+}

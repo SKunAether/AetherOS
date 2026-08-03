@@ -1,0 +1,10 @@
+{
+  "dashboard": "系统概览",
+  "cleaner": "清理与优化",
+  "optimizer": "性能优化",
+  "monitor": "状态监控",
+  "recovery": "恢复中心",
+  "settings": "设置",
+  "about": "关于",
+  "title": "AetherOS"
+}

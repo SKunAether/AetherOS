@@ -1,0 +1,24 @@
+{
+  "name": "aetheros",
+  "version": "2.0.0",
+  "private": true,
+  "description": "AetherOS 2.0 — 模块化 Windows 系统优化与管理平台 (Rust + Tauri + React)",
+  "scripts": {
+    "dev": "pnpm --filter @aetheros/desktop dev",
+    "build": "pnpm --filter @aetheros/desktop build",
+    "tauri": "pnpm --filter @aetheros/desktop tauri",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.0"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

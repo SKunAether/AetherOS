@@ -1,0 +1,12 @@
+{
+  "id": "sample.safe-rule-pack",
+  "name": "示例安全规则包",
+  "version": "2.0.0",
+  "author": "AetherOS Community",
+  "description": "用于验证 ZIP 安装、启停和卸载流程的声明式示例插件。",
+  "category": "Rule Pack",
+  "minimumAetherOSVersion": "2.0.0",
+  "capabilities": ["sample.scan-rule"],
+  "isEnabled": false,
+  "isBuiltIn": false
+}

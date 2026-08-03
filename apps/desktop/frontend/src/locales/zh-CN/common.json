@@ -1,0 +1,26 @@
+{
+  "appName": "AetherOS Guardian",
+  "tagline": "模块化 Windows 系统优化与管理平台",
+  "actions": {
+    "scan": "扫描",
+    "execute": "执行",
+    "cancel": "取消",
+    "confirm": "确认",
+    "refresh": "刷新",
+    "open": "打开",
+    "close": "关闭"
+  },
+  "status": {
+    "loading": "加载中…",
+    "ready": "就绪",
+    "error": "出错了",
+    "empty": "暂无数据"
+  },
+  "health": {
+    "excellent": "优秀",
+    "good": "良好",
+    "fair": "一般",
+    "poor": "较差",
+    "critical": "危险"
+  }
+}

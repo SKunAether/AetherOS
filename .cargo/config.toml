@@ -1,0 +1,6 @@
+# Cargo 全局配置（工作区级）
+[build]
+# 增量编译加速开发反馈（CI 中可关闭以换取更小缓存）
+incremental = true
+
+# 注意：不要设置 target-cpu=native，会破坏通用安装包的兼容性

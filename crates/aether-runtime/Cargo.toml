@@ -1,0 +1,18 @@
+# aether-runtime — 能力运行时（系统调度中枢）
+# 管理所有 Provider 全生命周期：注册发现、任务调度、插件加载、事件总线。
+[package]
+name = "aether-runtime"
+version = "0.1.0"
+edition = "2021"
+description = "AetherOS capability runtime: provider registry, scheduler, plugin loader, event bus"
+
+[dependencies]
+aether-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }

@@ -1,0 +1,21 @@
+# aether-monitor — 监控能力 Provider
+# 实现系统资源实时监控、系统信息展示、健康状态评分与数据采集。
+[package]
+name = "aether-monitor"
+version = "0.1.0"
+edition = "2021"
+description = "AetherOS monitor capability provider"
+
+[dependencies]
+aether-core = { workspace = true }
+aether-system = { workspace = true }
+aether-runtime = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+sysinfo = { workspace = true }
+windows = { workspace = true }

@@ -1,0 +1,47 @@
+# 每日构建工作流（AetherOS 2.0）
+# 触发：每日定时生成开发版安装包，持续验证主干稳定性。
+name: Nightly
+
+on:
+  schedule:
+    # 每日 02:17 UTC（避开整点高峰）
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  nightly:
+    name: Nightly dev build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install frontend dependencies
+        working-directory: apps/desktop/frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Build dev installer
+        working-directory: apps/desktop/src-tauri
+        run: pnpm --filter @aetheros/desktop-frontend exec tauri build
+
+      - name: Upload nightly artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aetheros-nightly
+          path: target/release/bundle/**/*
+          retention-days: 14

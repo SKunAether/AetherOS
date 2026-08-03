@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"AetherOS 桌面端默认能力：主窗口对前端暴露的权限集","local":true,"windows":["main"],"permissions":["core:default","opener:default"]}}

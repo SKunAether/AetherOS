@@ -1,0 +1,6 @@
+# Rust 工具链版本锁定：统一所有开发者的 Rust 版本与组件，保证各环境构建结果一致。
+# 方案文档要求 Rust 1.80+，本机为 1.97.1（满足要求）。
+[toolchain]
+channel = "1.97.1"
+components = ["rustfmt", "clippy"]
+targets = ["x86_64-pc-windows-msvc"]

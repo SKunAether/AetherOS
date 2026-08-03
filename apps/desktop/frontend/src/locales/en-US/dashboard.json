@@ -1,0 +1,24 @@
+{
+  "welcome": "Welcome to AetherOS",
+  "subtitle": "An overview of your system health",
+  "healthScore": "Health Score",
+  "systemDrive": "System Drive",
+  "used": "Used",
+  "free": "Free",
+  "total": "Total",
+  "quickActions": "Quick Actions",
+  "action": {
+    "quickScan": "Quick Scan",
+    "cleaner": "Smart Cleanup",
+    "deepScan": "Deep Scan",
+    "settings": "System Settings"
+  },
+  "stats": {
+    "temporaryFiles": "Temporary Files",
+    "updateCache": "Update Cache",
+    "hibernateFile": "Hibernate File",
+    "pageFile": "Page File",
+    "windowsOld": "Windows.old"
+  },
+  "greeting": "Hello, {{name}}"
+}

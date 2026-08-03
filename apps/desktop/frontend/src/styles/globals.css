@@ -1,0 +1,114 @@
+/* 全局样式与 Tailwind 主题入口
+ * 采用 CSS 变量驱动的双主题系统（浅色为 :root 默认，深色由 .dark class 切换）
+ * 所有颜色经 tailwind.config.js 映射为语义类（bg-background / text-foreground 等）
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- 浅色主题（默认） ---- */
+:root {
+  --background: #f6f7fb;
+  --foreground: #1b1e2a;
+  --card: #ffffff;
+  --card-foreground: #1b1e2a;
+  --muted: #eceef4;
+  --muted-foreground: #5c6374;
+  --border: #e2e5ed;
+  --input: #e2e5ed;
+  --primary: #6c72f7;
+  --primary-foreground: #ffffff;
+  --secondary: #eceef4;
+  --secondary-foreground: #1b1e2a;
+  --accent: #8b90ff;
+  --accent-foreground: #1b1e2a;
+  --destructive: #e5484d;
+  --ring: #6c72f7;
+  --sidebar: #ffffff;
+  --success: #27b786;
+  --warning: #d99020;
+  --danger: #e5484d;
+  --glass-bg: rgba(255, 255, 255, 0.72);
+}
+
+/* ---- 深色主题（.dark class 切换） ---- */
+.dark {
+  --background: #14161f;
+  --foreground: #f2f4f8;
+  --card: #1b1e2a;
+  --card-foreground: #f2f4f8;
+  --muted: #232733;
+  --muted-foreground: #a0a6b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: #2a2f3d;
+  --primary: #6c72f7;
+  --primary-foreground: #ffffff;
+  --secondary: #232733;
+  --secondary-foreground: #f2f4f8;
+  --accent: #8b90ff;
+  --accent-foreground: #f2f4f8;
+  --destructive: #e5484d;
+  --ring: #6c72f7;
+  --sidebar: #1b1e2a;
+  --success: #27b786;
+  --warning: #d99020;
+  --danger: #e5484d;
+  --glass-bg: rgba(27, 30, 42, 0.72);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family:
+      Inter,
+      'Microsoft YaHei UI',
+      'Segoe UI Variable Text',
+      'Segoe UI',
+      system-ui,
+      sans-serif;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* 玻璃拟态卡片 */
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  }
+
+  /* 侧边栏导航项 */
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors;
+    color: var(--muted-foreground);
+  }
+  .nav-item:hover {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+  .nav-item.is-active {
+    background: rgba(108, 114, 247, 0.16);
+    color: var(--primary);
+  }
+
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    opacity: 0.4;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "welcome": "欢迎使用 AetherOS",
+  "subtitle": "您的系统健康一览",
+  "healthScore": "健康评分",
+  "systemDrive": "系统盘",
+  "used": "已用",
+  "free": "可用",
+  "total": "总容量",
+  "quickActions": "快捷操作",
+  "action": {
+    "quickScan": "快速扫描",
+    "cleaner": "智能清理",
+    "deepScan": "深度扫描",
+    "settings": "系统设置"
+  },
+  "stats": {
+    "temporaryFiles": "临时文件",
+    "updateCache": "更新缓存",
+    "hibernateFile": "休眠文件",
+    "pageFile": "页面文件",
+    "windowsOld": "Windows.old"
+  },
+  "greeting": "你好，{{name}}"
+}

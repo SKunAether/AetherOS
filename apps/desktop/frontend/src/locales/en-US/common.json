@@ -1,0 +1,26 @@
+{
+  "appName": "AetherOS Guardian",
+  "tagline": "Modular Windows maintenance & optimization platform",
+  "actions": {
+    "scan": "Scan",
+    "execute": "Run",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "refresh": "Refresh",
+    "open": "Open",
+    "close": "Close"
+  },
+  "status": {
+    "loading": "Loading…",
+    "ready": "Ready",
+    "error": "Something went wrong",
+    "empty": "No data"
+  },
+  "health": {
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor",
+    "critical": "Critical"
+  }
+}

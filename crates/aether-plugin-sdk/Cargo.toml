@@ -1,0 +1,13 @@
+# aether-plugin-sdk — 插件开发 SDK
+# 封装插件开发所需接口、类型与工具，降低第三方开发门槛。
+[package]
+name = "aether-plugin-sdk"
+version = "0.1.0"
+edition = "2021"
+description = "AetherOS plugin development SDK"
+
+[dependencies]
+aether-core = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }

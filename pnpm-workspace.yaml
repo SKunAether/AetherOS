@@ -1,0 +1,7 @@
+# pnpm 工作空间配置：管理多包前端工程依赖。
+# 目前仅一个桌面端应用包，未来可扩展更多端（mobile/web 等）。
+
+packages:
+  - "apps/desktop/frontend"
+allowBuilds:
+  esbuild: true

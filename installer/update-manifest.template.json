@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "channel": "stable",
+  "downloadUrl": "https://github.com/SKunAether/AetherOS/releases/latest/download/AetherOS-Guardian-2.0.0-setup.exe",
+  "sha256": "REPLACE_AFTER_BUILD",
+  "releaseNotes": "AetherOS Guardian 2.0.0：Rust + Tauri + React 架构重构（v1.1 方案落地）。",
+  "publishedAt": "2026-08-03T00:00:00Z",
+  "projectUrl": "https://github.com/SKunAether/AetherOS",
+  "minimumSupportedVersion": "2.0.0"
+}

@@ -1,0 +1,16 @@
+# aether-core — 核心领域层
+# 定义全项目通用的模型、接口（trait）、错误与事件类型，是所有模块的依赖核心。
+# 约束：不包含任何具体实现与平台依赖（禁止 windows API / UI 依赖），保证纯粹性与可移植性。
+[package]
+name = "aether-core"
+version = "0.1.0"
+edition = "2021"
+description = "AetherOS core domain layer: models, traits, errors, events"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true, features = ["v4", "serde"] }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }

@@ -1,0 +1,37 @@
+# Tauri 桌面端 Rust 工程：应用主入口与 IPC 命令层
+[package]
+name = "aetheros-desktop"
+version = "0.1.0"
+description = "AetherOS 2.0 desktop shell (Tauri 2)"
+edition = "2021"
+
+[lib]
+name = "aetheros_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { workspace = true }
+
+[dependencies]
+aether-core = { workspace = true }
+aether-runtime = { workspace = true }
+aether-system = { workspace = true }
+aether-cleaner = { workspace = true }
+aether-monitor = { workspace = true }
+aether-optimizer = { workspace = true }
+aether-recovery = { workspace = true }
+ureq = { workspace = true }
+base64 = { workspace = true }
+
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tauri = { workspace = true }
+tauri-plugin-opener = { workspace = true }
+windows = { workspace = true }

@@ -1,0 +1,12 @@
+{
+  "id": "aetheros.developer-environment",
+  "name": "开发环境规则包",
+  "version": "2.0.0",
+  "author": "AetherOS Team",
+  "description": "开发环境缓存清理（npm/pnpm/cargo 等），默认禁用",
+  "category": "Built-in",
+  "minimumAetherOSVersion": "2.0.0",
+  "capabilities": ["scan.dev-cache"],
+  "isEnabled": false,
+  "isBuiltIn": true
+}
