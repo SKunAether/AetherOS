@@ -56,7 +56,7 @@ jobs:
           node-version: 22
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         # 不指定 version，让 action 从 package.json 的 packageManager 字段读取
 
       - name: Cache pnpm
