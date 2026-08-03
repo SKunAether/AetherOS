@@ -37,9 +37,12 @@ jobs:
         working-directory: apps/desktop/frontend
         run: pnpm build
 
+      - name: Install tauri-cli
+        run: cargo install tauri-cli
+
       - name: Build installer (tauri)
-        working-directory: apps/desktop/frontend
-        run: pnpm exec tauri build -- --path ${{ github.workspace }}/apps/desktop
+        working-directory: apps/desktop/src-tauri
+        run: cargo tauri build
 
       - name: Generate update manifest
         shell: pwsh
