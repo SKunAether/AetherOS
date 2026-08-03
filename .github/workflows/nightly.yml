@@ -28,7 +28,7 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        # 不指定 version，让 action 从 package.json 的 packageManager 字段读取
+        # 从根 package.json 的 packageManager 字段读取版本
 
       - name: Install frontend dependencies
         working-directory: apps/desktop/frontend
@@ -36,7 +36,7 @@ jobs:
 
       - name: Build dev installer
         working-directory: apps/desktop/frontend
-        run: pnpm exec tauri build --path ../src-tauri
+        run: pnpm exec tauri build -- --path ../src-tauri
 
       - name: Upload nightly artifact
         uses: actions/upload-artifact@v4
