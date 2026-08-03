@@ -19,7 +19,7 @@ jobs:
     name: Rust (core + runtime + system)
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -48,7 +48,7 @@ jobs:
       run:
         working-directory: apps/desktop/frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Node
         uses: actions/setup-node@v4
