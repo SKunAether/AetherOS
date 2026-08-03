@@ -40,7 +40,7 @@ jobs:
         run: pnpm --filter @aetheros/desktop-frontend exec tauri build
 
       - name: Upload nightly artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: aetheros-nightly
           path: target/release/bundle/**/*
