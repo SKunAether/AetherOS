@@ -46,7 +46,7 @@ regex = "1"
 
 # ---- AI analysis ----
 ureq = { version = "2", default-features = false, features = ["tls", "json"] }
-base64 = "0.22"
+base64 = "0.23"
 
 # ---- Tauri 2 ----
 tauri = { version = "2", features = ["tray-icon"] }
